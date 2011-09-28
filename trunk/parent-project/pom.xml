@@ -86,4 +86,9 @@
 		</dependency>
 	</dependencies>
 
+  <modules>
+    <module>modular-spring</module>
+    <module>spring3-mvc</module>
+    <module>myfaces-facelets</module>
+  </modules>
 </project>
