@@ -1,5 +1,6 @@
 package com.emergya.barcamp2011.server.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,6 +14,18 @@ public class DummyEntity {
 	@Id
 	@GeneratedValue(strategy= GenerationType.SEQUENCE)
 	private Long id;
+	
+	
+	private String name;
+
+	@Column
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
 
 	public Long getId() {
 		return id;

@@ -14,7 +14,7 @@ public class HelloWorldController {
      * Simply serves hello.jsp
      * @return view with name 'hello'
      */
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String handleRequest() {
         return "hello";
     }

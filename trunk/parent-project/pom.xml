@@ -16,7 +16,7 @@
 		</license>
 	</licenses>
 
-	<name>modulos-visor-sig</name>
+	<name>modulos-barcamp2011</name>
 	<url>http://www.emergya.es</url>
 
 	<organization>
@@ -87,7 +87,7 @@
 	</dependencies>
 
   <modules>
-    <module>modular-spring</module>
+    <module>spring3-core</module>
     <module>spring3-mvc</module>
     <module>myfaces-facelets</module>
   </modules>

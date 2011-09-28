@@ -154,7 +154,7 @@
     	<!-- Internal dependencies -->
         <dependency>
             <groupId>${pom.parent.groupId}</groupId>
-            <artifactId>modular-spring-core</artifactId>
+            <artifactId>spring3-core</artifactId>
             <version>${pom.parent.version}</version>
         </dependency>
         

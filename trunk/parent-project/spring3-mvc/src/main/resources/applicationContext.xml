@@ -6,8 +6,9 @@
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
 
+	<import resource="classpath:coreContext.xml" />
     <context:annotation-config/>
-    <context:component-scan base-package="com.emergya.barcamp2011.server"/>
+    <context:component-scan base-package="com.emergya.barcamp2011.web"/>
 
     <context:property-placeholder properties-ref="properties"/>
 
@@ -24,31 +25,5 @@
         <property name="defaultEncoding" value="${project.build.sourceEncoding}"/>
     </bean>
 
-
-    <!-- DAO layer -->
-    <tx:annotation-driven/>
-    <bean id="transactionManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
-        <property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-
-    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
-        <property name="driverClassName" value="org.hsqldb.jdbcDriver"/>
-        <property name="url" value="jdbc:hsqldb:mem:testDB"/>
-        <property name="username" value="sa"/>
-        <property name="password" value=""/>
-    </bean>
-
-    <!-- Hibernate session factory -->
-    <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
-        <property name="dataSource" ref="dataSource"/>
-        <property name="packagesToScan" value="com.emergya.barcamp2011.server.entity" />
-        <property name="hibernateProperties">
-            <props>
-                <prop key="hibernate.dialect">org.hibernate.dialect.HSQLDialect</prop>
-                <prop key="hibernate.hbm2ddl.auto">create</prop>
-                <prop key="hibernate.show_sql">true</prop>
-            </props>
-        </property>
-    </bean>
 
 </beans>
