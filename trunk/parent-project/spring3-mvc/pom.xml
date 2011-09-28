@@ -40,6 +40,12 @@
             <groupId>${pom.parent.groupId}</groupId>
             <artifactId>modular-spring-core</artifactId>
             <version>${pom.parent.version}</version>
+            <exclusions>
+            	<exclusion>
+            		<groupId>org.springframework</groupId>
+  					<artifactId>spring</artifactId>
+            	</exclusion>
+            </exclusions>
         </dependency>
         <!-- SPRING DEPENDENCIES -->
         <dependency>
