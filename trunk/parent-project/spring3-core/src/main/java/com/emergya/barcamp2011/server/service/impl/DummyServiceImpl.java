@@ -20,7 +20,7 @@ import com.emergya.barcamp2011.server.service.DummyService;
  * @author adiaz
  *
  */
-@Repository
+@Repository(value="dummyService")
 @Transactional
 public class DummyServiceImpl implements DummyService {
 	

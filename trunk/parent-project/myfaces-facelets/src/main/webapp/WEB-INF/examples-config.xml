@@ -25,6 +25,7 @@
 
 	<application>
 		<view-handler>com.sun.facelets.FaceletViewHandler</view-handler>
+		<variable-resolver>org.springframework.web.jsf.DelegatingVariableResolver</variable-resolver>
 	</application>
 
 	<!-- managed beans of the simple hello world app -->
@@ -51,6 +52,35 @@
 		<navigation-case>
 			<from-outcome>back</from-outcome>
 			<to-view-id>/helloWorld.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<!-- managed beans of the dummy -->
+	<managed-bean>
+		<managed-bean-name>dummyBacking</managed-bean-name>
+		<managed-bean-class>
+			com.emergya.barcamp2011.DummyBacking
+		</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+	        <property-name>dummyService</property-name>
+	        <value>#{dummyService}</value>
+	    </managed-property>
+	</managed-bean>
+	
+	<navigation-rule>
+		<from-view-id>/addDummy.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>allDummies</from-outcome>
+			<to-view-id>/allDummies.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/allDummies.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>addDummy</from-outcome>
+			<to-view-id>/addDummy.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
 </faces-config>

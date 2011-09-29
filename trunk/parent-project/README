@@ -1,18 +1,38 @@
 Maven-packages generated from:
 
-1. modular-spring
-	~$ mvn archetype:generate -DgroupId=com.emergya.barcamp2011 -DartifactId=modular-spring
-	selected:
-		237: remote -> org.appfuse:appfuse-modular-spring (Maven 2 archetype that creates a modular web application with AppFuse. This archetype creates two modules:
-			"core" and "web". The core module depends on appfuse-service, while the web module depends on core as well
-			as AppFuse's Spring MVC implementation.)
-
-2. spring-mvc
+1. spring3-mvc
 	~$ mvn archetype:generate -DgroupId=com.emergya.barcamp2011 -DartifactId=spring3-mvc
 	selected: 
 		459: local -> org.springframework.archetypes:spring-3-mvc-archetype (spring-3-mvc-archetype)
 
-3. myfaces-facelets
+	Separated in two projects: spring3-core and spring3-mvc
+
+2. myfaces-facelets
 	~$ mvn archetype:generate -DgroupId=com.emergya.barcamp2011 -DartifactId=myfaces-facelets
 	selected: 
 		140: remote -> org.apache.myfaces.buildtools:myfaces-archetype-helloworld-facelets (Archetype to create a new webapp based on MyFaces and Facelets)
+
+3. DB: 
+	The default active profile is for testing with HSQLDB. 
+	
+	For mysql: 
+		~$ mysqladmin create barcamp2011DB -u root -p
+	And use by:
+		~$ mvn ***** -P mysql
+	in all maven builds
+
+	If you want use other db, add a new profile in spring3-core/pom.xml
+
+4. Compile & packaging
+
+	First launch:
+		~barcamp-maven/trunk/parent-project$ mvn clean install
+
+	And copy wars located in:
+		* ~barcamp-maven/trunk/parent-project/myfaces-facelets/target/myfaces-facelets.war
+		* ~barcamp-maven/trunk/parent-project/spring3-mvc/target/com.emergya.barcamp2011.war
+	to your server (tested with tomcat6)
+
+	You can launch jetty by:
+		* myfaces-facelets: ~barcamp-maven/trunk/parent-project/myfaces-facelets$ mvn jetty:run
+		* spring3-mvc: ~barcamp-maven/trunk/parent-project/spring3-mvc$ mvn jetty:run

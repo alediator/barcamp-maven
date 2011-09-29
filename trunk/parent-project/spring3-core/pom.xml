@@ -75,6 +75,11 @@
 			<version>${hsqldb.version}</version>
 		</dependency>
 		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.17</version>
+		</dependency>
+		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
 			<version>${commons-dbcp.version}</version>
@@ -125,5 +130,33 @@
             </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+	    <profile>
+	      <id>test</id>
+	      <properties>
+	      		<jdbc.driverClassName>org.hsqldb.jdbcDriver</jdbc.driverClassName>
+        		<jdbc.url>jdbc:hsqldb:mem:testDB</jdbc.url>
+       			<jdbc.username>sa</jdbc.username>
+       			<jdbc.password></jdbc.password>
+        		<hibernate.dialect>org.hibernate.dialect.HSQLDialect</hibernate.dialect>
+                <hibernate.hbm2ddl.auto>create</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>true</hibernate.show_sql>
+	      </properties>
+	      <activation><activeByDefault>true</activeByDefault></activation>
+	    </profile>
+	    <profile>
+	      <id>mysql</id>
+	      <properties>
+	      		<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+        		<jdbc.url>jdbc:mysql://localhost:3306/barcamp2011DB</jdbc.url>
+       			<jdbc.username>root</jdbc.username>
+       			<jdbc.password>root</jdbc.password>
+        		<hibernate.dialect>org.hibernate.dialect.MySQLDialect</hibernate.dialect>
+                <hibernate.hbm2ddl.auto>create</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>false</hibernate.show_sql>
+	      </properties>
+	    </profile>
+    </profiles>
 
 </project>
