@@ -1,0 +1,6 @@
+mysqladmin create barcamp2011DB -u root -p
+
+sudo cp myfaces-facelets/target/myfaces-facelets.war /var/lib/tomcat6/webapps/
+
+sudo cp spring3-mvc/target/com.emergya.barcamp2011.war /var/lib/tomcat6/webapps/spring-mvc.war
+
