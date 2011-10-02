@@ -9,6 +9,21 @@
     <properties>
         <maven-compiler-plugin.version>2.3.1</maven-compiler-plugin.version>
     </properties>
+    
+    <dependencies>
+      <dependency>
+	  <groupId>jstl</groupId>
+	  <artifactId>jstl</artifactId>
+	  <version>1.2</version>
+      </dependency>
+
+        <!-- HIBERNATE DEPENDENCIES -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>3.5.1-Final</version>
+	</dependency>
+    </dependencies>
 
     <build>
         <finalName>${project.groupId}</finalName>
