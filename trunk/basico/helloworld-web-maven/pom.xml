@@ -16,17 +16,10 @@
 	  <artifactId>jstl</artifactId>
 	  <version>1.2</version>
       </dependency>
-
-        <!-- HIBERNATE DEPENDENCIES -->
-	<dependency>
-		<groupId>org.hibernate</groupId>
-		<artifactId>hibernate-core</artifactId>
-		<version>3.5.1-Final</version>
-	</dependency>
     </dependencies>
 
     <build>
-        <finalName>${project.groupId}</finalName>
+        <finalName>${project.artifactId}</finalName>
 
         <plugins>
             <plugin>
