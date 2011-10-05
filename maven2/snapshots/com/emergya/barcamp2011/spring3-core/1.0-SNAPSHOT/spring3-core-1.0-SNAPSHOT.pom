@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+    <groupId>com.emergya.barcamp2011</groupId>
+	<artifactId>barcamp2011-multi-module</artifactId>
+	<version>1.0-SNAPSHOT</version>
+  </parent>
+	<groupId>com.emergya.barcamp2011</groupId>
+	<artifactId>spring3-core</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+	<!-- Project Information -->
+	<licenses>
+		<license>
+			<name>Apache License V2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0</url>
+		</license>
+	</licenses>
+
+	<name>Core del proyecto</name>
+	<url>http://www.emergya.es</url>
+	<description>Core del ejemplo del proyecto multi-módulo</description>
+
+	<organization>
+		<name>Emergya</name>
+		<url>http://www.emergya.es</url>
+	</organization>
+
+	<developers>
+		<developer>
+			<id>adiaz</id>
+			<name>Alejandro Diaz Torres</name>
+			<email>adiaz@emergya.com</email>
+			<organization>Emergya Consultoria</organization>
+			<organizationUrl>http://www.emergya.es</organizationUrl>
+			<roles>
+				<role>Analista</role>
+			</roles>
+		</developer>
+	</developers>
+
+
+	<issueManagement>
+		<system>github</system>
+		<url>http://github.com/alediator/barcamp-maven/issues</url>
+	</issueManagement>
+	<ciManagement>
+		<system>jenkins</system>
+		<url>http://jenkins.emergya.es/jenkins/view/barcamp-maven/</url>
+	</ciManagement>
+	<inceptionYear>2011</inceptionYear>
+	<!-- Project Information -->
+
+
+	<!-- Environment Information -->
+	<scm>
+		<connection>scm:git@github.com:alediator/barcamp-maven.git</connection>
+		<developerConnection>scm:git@github.com:alediator/barcamp-maven.git</developerConnection>
+		<url>http://alediator@github.com/alediator/barcamp-maven.git</url>
+	</scm>
+
+
+	<distributionManagement>
+		<!-- use the following if you're not using a snapshot version. -->
+		<repository>
+			<id>nexus.releases</id>
+			<name>Nexus Barcamp Releases</name>
+			<url>http://nexus.emergya.es/nexus/content/repositories/barcamp-maven-repo/</url>
+		</repository>
+		<!-- use the following if you ARE using a snapshot version. -->
+		<snapshotRepository>
+			<id>nexus.snapshots</id>
+			<name>Nexus Barcamp Snapshot</name>
+			<url>http://nexus.emergya.es/nexus/content/repositories/barcamp-maven-snapshots/</url>
+	</snapshotRepository>
+	</distributionManagement>
+	
+    <properties>
+		<jetty.version>6.1.4</jetty.version>
+		<hibernate.version>3.5.1-Final</hibernate.version>
+		<spring.version>3.0.3.RELEASE</spring.version>
+		<hsqldb.version>1.8.0.7</hsqldb.version>
+		<commons-dbcp.version>1.4</commons-dbcp.version>
+        <maven-compiler-plugin.version>2.3.1</maven-compiler-plugin.version>
+        <maven-jetty-plugin.version>6.1.24</maven-jetty-plugin.version>
+        
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+    
+    <repositories>
+		<repository>
+			<id>jboss-repo</id>
+			<url>http://repository.jboss.org/maven2</url>
+		</repository>
+		<repository>
+			<id>spring-repo</id>
+			<url>http://maven.springframework.org</url>
+		</repository>
+	</repositories>
+
+    <dependencies>
+        <!-- SPRING DEPENDENCIES -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${spring.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!--Misc dependencies-->
+
+         <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.8.1</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- HIBERNATE DEPENDENCIES -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${hibernate.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>hsqldb</groupId>
+			<artifactId>hsqldb</artifactId>
+			<version>${hsqldb.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>5.1.17</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+			<version>${commons-dbcp.version}</version>
+		</dependency>
+
+		<!-- LOGGING DEPENDENCIES - LOG4J -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.4.2</version>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.14</version>
+		</dependency>
+
+    </dependencies>
+
+    <build>
+        <finalName>${project.groupId}</finalName>
+
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
+
+        <plugins>
+            <plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>${maven-compiler-plugin.version}</version>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
+					<optimize>true</optimize>
+					<debug>true</debug>
+				</configuration>
+			</plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <configuration>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <profiles>
+	    <profile>
+	      <id>test</id>
+	      <properties>
+	      		<jdbc.driverClassName>org.hsqldb.jdbcDriver</jdbc.driverClassName>
+        		<jdbc.url>jdbc:hsqldb:mem:testDB</jdbc.url>
+       			<jdbc.username>sa</jdbc.username>
+       			<jdbc.password></jdbc.password>
+        		<hibernate.dialect>org.hibernate.dialect.HSQLDialect</hibernate.dialect>
+                <hibernate.hbm2ddl.auto>create</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>true</hibernate.show_sql>
+	      </properties>
+	      <activation><activeByDefault>true</activeByDefault></activation>
+	    </profile>
+	    <profile>
+	      <id>mysql</id>
+	      <properties>
+	      		<jdbc.driverClassName>com.mysql.jdbc.Driver</jdbc.driverClassName>
+        		<jdbc.url>jdbc:mysql://localhost:3306/barcamp2011DB</jdbc.url>
+       			<jdbc.username>root</jdbc.username>
+       			<jdbc.password>root</jdbc.password>
+        		<hibernate.dialect>org.hibernate.dialect.MySQLDialect</hibernate.dialect>
+                <hibernate.hbm2ddl.auto>create</hibernate.hbm2ddl.auto>
+                <hibernate.show_sql>false</hibernate.show_sql>
+	      </properties>
+	    </profile>
+    </profiles>
+
+</project>
