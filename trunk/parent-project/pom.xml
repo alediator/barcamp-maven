@@ -62,15 +62,15 @@
 	<distributionManagement>
 		<!-- use the following if you're not using a snapshot version. -->
 		<repository>
-			<id>nexus.releases</id>
-			<name>Nexus Barcamp Releases</name>
-			<url>http://nexus.emergya.es/nexus/content/repositories/barcamp-maven-repo/</url>
+			<id>releases</id>
+			<name>Barcamp Releases</name>
+			<url>https://alediator@github.com/alediator/barcamp-maven.git/maven2/releases</url>
 		</repository>
 		<!-- use the following if you ARE using a snapshot version. -->
 		<snapshotRepository>
-			<id>nexus.snapshots</id>
-			<name>Nexus Barcamp Snapshot</name>
-			<url>http://nexus.emergya.es/nexus/content/repositories/barcamp-maven-snapshots/</url>
+			<id>snapshots</id>
+			<name>Barcamp Snapshot</name>
+			<url>https://alediator@github.com/alediator/barcamp-maven.git/maven2/snapshots</url>
 	</snapshotRepository>
 	</distributionManagement>
 
