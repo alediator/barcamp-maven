@@ -18,6 +18,7 @@
 
 	<name>modulos-barcamp2011</name>
 	<url>http://www.emergya.es</url>
+	<description>Ejemplo de proyecto multi-módulo</description>
 
 	<organization>
 		<name>Emergya</name>
