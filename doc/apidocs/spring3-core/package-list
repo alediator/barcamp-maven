@@ -1,0 +1,6 @@
+com.emergya.barcamp2011.server.dao
+com.emergya.barcamp2011.server.dao.impl
+com.emergya.barcamp2011.server.dto
+com.emergya.barcamp2011.server.entity
+com.emergya.barcamp2011.server.service
+com.emergya.barcamp2011.server.service.impl
