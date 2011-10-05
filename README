@@ -1,0 +1,15 @@
+Código fuente de ejemplo y material de apoyo para la charla de maven para la barcamp spain 2011
+
+############## DOC ################
+Presentación en formato odp
+
+############## TRUNK ################
+Parte del código fuente utilizado
+
+############# maven2 ##############
+Repositorio con los artefactos generados
+
+Ver también (integracion continua):
+
+* http://nexus.emergya.es/nexus/index.html#view-repositories;barcamp-maven-snapshots~browsestorage
+* http://jenkins.emergya.es/jenkins/view/barcamp-maven/
