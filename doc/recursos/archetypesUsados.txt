@@ -1,5 +1,0 @@
-459: local -> org.springframework.archetypes:spring-3-mvc-archetype (spring-3-mvc-archetype)
-237: remote -> org.appfuse:appfuse-modular-spring (Maven 2 archetype that creates a modular web application with AppFuse. This archetype creates two modules:
-        "core" and "web". The core module depends on appfuse-service, while the web module depends on core as well
-        as AppFuse's Spring MVC implementation.)
-140: remote -> org.apache.myfaces.buildtools:myfaces-archetype-helloworld-facelets (Archetype to create a new webapp based on MyFaces and Facelets)
