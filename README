@@ -11,5 +11,6 @@ Repositorio con los artefactos generados
 
 Ver también (integracion continua):
 
-* http://nexus.emergya.es/nexus/index.html#view-repositories;barcamp-maven-snapshots~browsestorage
-* http://jenkins.emergya.es/jenkins/view/barcamp-maven/
+* Nexus: http://nexus.emergya.es/nexus/index.html#view-repositories;barcamp-maven-snapshots~browsestorage
+* Jenkins:http://jenkins.emergya.es/jenkins/view/barcamp-maven/
+* Site: http://alediator.github.com/barcamp-maven/
