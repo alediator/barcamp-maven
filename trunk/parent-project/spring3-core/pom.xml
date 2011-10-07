@@ -165,7 +165,7 @@
     </dependencies>
 
     <build>
-        <finalName>${project.groupId}</finalName>
+        <finalName>${project.artifactId}</finalName>
 
         <resources>
             <resource>
